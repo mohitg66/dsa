@@ -1,4 +1,4 @@
-// BST Dijkstra (SSSP) (using set)
+// BST Dijkstra (SSSP) (using set), O(V+ ElogV)
 vector<int> dijkstra(int V, vector<vector<int>> adj[], int S) {
     set<pair<int, int>> PQ;
     vector<int> dist (V, INT_MAX);

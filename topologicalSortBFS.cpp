@@ -1,4 +1,4 @@
-// Topological Sort using BFS
+// Topological Sort using BFS, O(V+E)
 vector<int> topoSort(int V, vector<int> adj[]) {
     vector<int> inDegree(V, 0);
     queue<int> q;

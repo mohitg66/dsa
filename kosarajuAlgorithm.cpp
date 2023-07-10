@@ -1,4 +1,4 @@
-// Kosaraju Algorithm for Strongly Connected Components (SCCs)
+// Kosaraju Algorithm for Strongly Connected Components (SCCs), O(V+E)
 vector<bool> visited;
 stack<int> s;
 void dfs(vector<vector<int>>& adj, int i, bool topSort){

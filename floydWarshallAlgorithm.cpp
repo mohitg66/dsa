@@ -1,4 +1,4 @@
-// Floyd Warshall Algorithm for finding all pairs shortest path
+// Floyd Warshall Algorithm for finding all pairs shortest path, O(V^3)
 
 // adj is the adjacency matrix of the graph
 void floydWarshallAlgorithm(int n, vector<vector<int>> &matrix){

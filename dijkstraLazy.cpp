@@ -1,4 +1,4 @@
-// Lazy Dijkstra (SSSP) (using visited array)
+// Lazy Dijkstra (SSSP) (using visited array), O(V+ ElogE)
 vector<int> dijkstra(int V, vector<vector<int>> adj[], int S) {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> q;
     vector<int> dist(V, INT_MAX);

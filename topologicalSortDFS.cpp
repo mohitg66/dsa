@@ -1,4 +1,4 @@
-// Topological Sort using DFS
+// Topological Sort using DFS, O(V+E)
 stack<int> s;
 vector<int> traversal;
 vector<bool> visited;

@@ -1,4 +1,4 @@
-// Single Source Shortest Path on DAG
+// Single Source Shortest Path on DAG, O(V+E)
 
 // Topological Sort START
 vector<bool> visited;
