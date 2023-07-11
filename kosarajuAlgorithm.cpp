@@ -1,13 +1,13 @@
 // Kosaraju Algorithm for Strongly Connected Components (SCCs), O(V+E)
 vector<bool> visited;
 stack<int> s;
-void dfs(vector<vector<int>>& adj, int i, bool topSort){
+void dfs(vector<vector<int>>& adj, int i, bool topoSort){
     visited[i]= 1;
     for (int next: adj[i]){
         if (!visited[next])
             dfs(adj, next, true);
     }
-    if (topSort) s.push(i);
+    if (topoSort) s.push(i);
 }
 
 int kosaraju(int V, vector<vector<int>>& adj) {
