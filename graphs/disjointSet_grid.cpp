@@ -1,18 +1,15 @@
-// Disjoint Set data structure with union by size, mainly used to detect cycles in kruskal's algorithm
 class DisjointSet {
-    vector<int> size;   // vector<int> rank;
+public:
+    vector<int> size;
     vector<int> parent;
 
-    public:
     // initialization, works for both 0 and 1-based indexing
-    DisjointSet(int n){
-        size.resize(n+1, 1);    // rank.resize(n+1, 0);
-        parent.resize(n+1);
-        for (int i=0; i<n+1; i++){
-            parent[i]= i;
-        }
+    DisjointSet(int n, int m){
+        size.resize(n*m +1, 1);
+        parent.resize(n*m +1);
+        for (int i=0; i<n*m +1; i++) parent[i]= i;
     }
-    
+
     // returns the ultimate parent of u
     int find(int u){
         if (u== parent[u]) return u;
