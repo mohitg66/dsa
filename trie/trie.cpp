@@ -13,7 +13,7 @@ public:
         root= new Node();
     }
     
-    void insert(string word) {
+    void insert(string &word) {
         Node* temp= root;
         for (char c: word){
             if (!temp->links[c-'a']) temp->links[c-'a']= new Node();
@@ -22,7 +22,7 @@ public:
         temp->flag= true;
     }
     
-    bool search(string word) {
+    bool search(string &word) {
         Node* temp= root;
         for (char c: word){
             if (!(temp->links[c-'a'])) return false;
@@ -31,7 +31,7 @@ public:
         return temp->flag;
     }
     
-    bool startsWith(string prefix) {
+    bool startsWith(string &prefix) {
         Node* temp= root;
         for (char c: prefix){
             if (!(temp->links[c-'a'])) return false;
