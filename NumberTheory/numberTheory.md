@@ -90,7 +90,7 @@ public:
     vector<ll> f;
     vector<ll> f_inv;
     // m should be a large prime number such as 1e9+7
-    PNC(ll n, ll _m){ 
+    PNC(ll n, ll _m= 1e9+7){ 
         m= _m;
         f.resize(n+1);
         f_inv.resize(n+1);
