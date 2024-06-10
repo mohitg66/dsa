@@ -1,8 +1,9 @@
 
 // C++ program to demonstrate the 
 // ordered set in GNU C++ 
-#include <iostream> 
+#include <bits/stdc++.h>
 using namespace std; 
+#define ll long long
   
 // Header files, namespaces, 
 // macros as defined above 
@@ -11,7 +12,11 @@ using namespace std;
 using namespace __gnu_pbds; 
   
 #define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update> 
-  
+// for including duplicate elements:
+// #define ordered_set tree<pair<int, int>, null_type,less<pair<int, int>>, rb_tree_tag,tree_order_statistics_node_update> 
+// #define f first
+// #define s second
+
 // Driver program to test above functions 
 int main() {
 
