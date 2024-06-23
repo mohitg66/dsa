@@ -28,7 +28,7 @@ ll pow(ll a, ll n, ll m){
 ![image2](images/matrixExponentiation2.png)
 
 <!-- link to matrixExponentiation.cpp -->
-https://github.dev/mohitg66/dsa/blob/main/NumberTheory/matrixExponentiation.cpp
+https://github.com/mohitg66/dsa/blob/main/NumberTheory/matrixExponentiation.cpp
 
 ### Euclidean Algorithm
 #### Computing gcd using Euclidean algorithm
