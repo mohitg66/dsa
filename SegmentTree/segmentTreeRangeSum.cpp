@@ -1,8 +1,9 @@
-class NumArray {
-    vector<int> seg;
-    int n;
+class SegmentTree {
 public:
-    NumArray(vector<int>& nums) {
+    vector<ll> seg;
+    int n;
+
+    SegmentTree(vector<int>& nums) {
         n= nums.size();
         seg.resize(4*n +1, 0);
         build(0, 0, n-1, nums);
@@ -19,7 +20,7 @@ public:
         seg[i]= seg[2*i +1]+ seg[2*i +2];
     }
     
-    void update(int index, int val, int i=0, int low= 0, int high= -1) {
+    void update(int index, ll val, int i=0, int low= 0, int high= -1) {
         if (high == -1) return update(index, val, i, low, n-1);
         if (low==high) {
             seg[i]= val;
@@ -27,17 +28,17 @@ public:
         }
         int mid= low+ (high-low)/2;
         if (index <= mid) 
-            update(index, val, i*2 +1, low, mid);
+            update(index, val, 2*i +1, low, mid);
         else
-            update(index, val, i*2 +2, mid+1, high);
-        seg[i]= seg[i*2 +1] + seg[i*2 +2];
+            update(index, val, 2*i +2, mid+1, high);
+        seg[i]= seg[2*i +1] + seg[2*i +2];
     }
     
-    int sumRange(int left, int right, int i=0, int low= 0, int high= -1) {
-        if (high == -1) return sumRange(left, right, i, low, n-1);
+    ll get(int left, int right, int i=0, int low= 0, int high= -1) {
+        if (high == -1) return get(left, right, i, low, n-1);
         if (left <= low && right >= high) return seg[i];
         if (left > high || right < low) return 0;
         int mid= low + (high-low)/2;
-        return (sumRange(left, right, i*2 +1, low, mid) + sumRange(left, right, i*2 +2, mid+1, high));
+        return (get(left, right, 2*i +1, low, mid) + get(left, right, 2*i +2, mid+1, high));
     }
 };
