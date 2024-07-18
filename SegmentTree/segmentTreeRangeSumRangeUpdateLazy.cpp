@@ -1,4 +1,4 @@
-// Segment Tree with Lazy Propagation | Range Update and Range Query
+// Segment Tree with Lazy Propagation | Range Query and Range Update
 class SegmentTree {
 public:
     vector<ll> seg, lazy;

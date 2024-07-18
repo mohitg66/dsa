@@ -1,4 +1,4 @@
-// Segment Tree | Point Update and Range Query
+// Segment Tree | Range Query and Point Update
 class SegmentTree {
 public:
     vector<ll> seg;
