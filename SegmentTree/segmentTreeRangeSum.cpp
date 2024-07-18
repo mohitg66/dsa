@@ -1,3 +1,4 @@
+// Segment Tree | Point Update and Range Query
 class SegmentTree {
 public:
     vector<ll> seg;
@@ -20,6 +21,7 @@ public:
         seg[i]= seg[2*i +1]+ seg[2*i +2];
     }
     
+    // update the value at index to val
     void update(int index, ll val, int i=0, int low= 0, int high= -1) {
         if (high == -1) return update(index, val, i, low, n-1);
         if (low==high) {
@@ -33,11 +35,12 @@ public:
             update(index, val, 2*i +2, mid+1, high);
         seg[i]= seg[2*i +1] + seg[2*i +2];
     }
-    
+
+    // get the sum of elements in the range [left, right]
     ll get(int left, int right, int i=0, int low= 0, int high= -1) {
         if (high == -1) return get(left, right, i, low, n-1);
+        if (left > high || right < low || low > high) return 0;
         if (left <= low && right >= high) return seg[i];
-        if (left > high || right < low) return 0;
         int mid= low + (high-low)/2;
         return (get(left, right, 2*i +1, low, mid) + get(left, right, 2*i +2, mid+1, high));
     }
