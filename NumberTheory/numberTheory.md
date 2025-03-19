@@ -120,3 +120,6 @@ public:
 
 #### Stars and Bars technique
 The number of ways to put $n$ identical objects into $k$ labeled boxes is `nCr(n+k-1, k-1)`
+
+### Addition Rule using Adder Logic
+`a+b = a&b + 2(a^b)`
